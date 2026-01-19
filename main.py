@@ -1,65 +1,45 @@
 import tkinter as tk
-from quiz_logic import QuizGame
-from questions import questions
+from logic import GuessGame
+from data import characters
 
-game = QuizGame(questions)
+SECRET = "Rammatra"
+
+game = GuessGame(characters, SECRET)
 
 root = tk.Tk()
-root.title("Quiz Game")
+root.title("Overwatch Quiz")
 root.geometry("400x300")
 
-question_label = tk.Label(root, text="", font=("Arial", 14), wraplength=350)
-question_label.pack(pady=20)
+title = tk.Label(root, text="Guess the Character!", font=("Arial", 16))
+title.pack(pady=10)
 
-def click_a():
-    handle_answer(button_a["text"])
+entry = tk.Entry(root, width=30)
+entry.pack(pady=10)
 
-def click_b():
-    handle_answer(button_b["text"])
+feedback = tk.Label(root, text="", font=("Arial", 12))
+feedback.pack(pady=10)
 
-def click_c():
-    handle_answer(button_c["text"])
+def submit_guess():
+    guess = entry.get()
+    result = game.check_guess(guess)
 
-def click_d():
-    handle_answer(button_d["text"])
+    if result is None:
+        feedback.config(text="Not in database!")
+        return
 
-def handle_answer(choice):
-    game.check_answer(choice)
+    text = ""
+    for key, correct in result.items():
+        status = "✅" if correct else "❌"
+        text += f"{key.capitalize()}: {status}\n"
 
-    if game.next_question():
-        load_question()
-    else:
-        show_score()
+    feedback.config(text=text)
 
-def load_question():
-    q = game.get_current_question()
+    if all(result.values()):
+        feedback.config(text="🎉 You guessed it correctly!")
 
-    question_label.config(text=q["question"])
+    entry.delete(0, tk.END)
 
-    button_a.config(text=q["choices"][0])
-    button_b.config(text=q["choices"][1])
-    button_c.config(text=q["choices"][2])
-    button_d.config(text=q["choices"][3])
+button = tk.Button(root, text="Guess", command=submit_guess)
+button.pack(pady=5)
 
-def show_score():
-    question_label.config(
-        text=f"Game Over!\nYour Score: {game.score}/{len(questions)}"
-    )
-    button_a.pack_forget()
-    button_b.pack_forget()
-    button_c.pack_forget()
-    button_d.pack_forget()
-
-button_a = tk.Button(root, text="", width=25, command=click_a)
-button_b = tk.Button(root, text="", width=25, command=click_b)
-button_c = tk.Button(root, text="", width=25, command=click_c)
-button_d = tk.Button(root, text="", width=25, command=click_d)
-
-button_a.pack(pady=5)
-button_b.pack(pady=5)
-button_c.pack(pady=5)
-button_d.pack(pady=5)
-
-
-load_question()
 root.mainloop()
