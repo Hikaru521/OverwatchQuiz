@@ -7,7 +7,7 @@ class GuessGame:
         guess = guess.lower()
 
         if guess not in self.data:
-            return None  # invalid guess
+            return None
 
         result = {}
         secret_data = self.data[self.secret]

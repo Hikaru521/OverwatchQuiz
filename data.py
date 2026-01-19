@@ -1,43 +1,119 @@
 characters = {
-    "winston": {
+    "d.va": {
         "role": "Tank",
-        "sex": "Man",
+        "gender": "Woman",
         "weapon": "Gun",
-        "species": "Animal"
+        "range": "Ranged",
+        "release": "2016",
+        "species": "Human"
     },
 
-    "hammster ball": {
+    "doomfist": {
         "role": "Tank",
-        "sex": "Man",
+        "gender": "Man",
         "weapon": "Gun",
-        "species": "Animal"
+        "range": "Ranged",
+        "release": "2022",
+        "species": "Human & Robot"
     },
 
-    "rammatra": {
+    "hazard": {
         "role": "Tank",
-        "sex": "Man",
-        "weapon": "Magic",
+        "gender": "Man",
+        "weapon": "Gun",
+        "range": "Ranged",
+        "release": "2024",
+        "species": "Human & Robot"
+    },
+
+    "junker queen": {
+        "role": "Tank",
+        "gender": "Woman",
+        "weapon": "Gun",
+        "range": "Ranged",
+        "release": "2022",
+        "species": "Human"
+    },
+
+    "mauga": {
+        "role": "Tank",
+        "gender": "Man",
+        "weapon": "Gun",
+        "range": "Ranged",
+        "release": "2023",
+        "species": "Human"
+    },
+
+    "orisa": {
+        "role": "Tank",
+        "gender": "Unknown",
+        "weapon": "Gun",
+        "range": "Ranged",
+        "release": "2022",
         "species": "Robot"
     },
 
-    "vendetta": {
-        "role": "Damage",
-        "sex": "Woman",
-        "weapon": "Sword",
-        "species": "Human"
-    },
-
-    "reaper": {
-        "role": "Damage",
-        "sex": "Man",
-        "weapon": "Gun",
-        "species": ""
-    },
-
-    "mercy": {
-        "role": "Healer",
-        "sex": "Woman",
+    "ramattra": {
+        "role": "Tank",
+        "gender": "Man",
         "weapon": "Magic",
+        "range": "Ranged",
+        "release": "2022",
+        "species": "Robot"
+    },
+
+    "reinhardt": {
+        "role": "Tank",
+        "gender": "Man",
+        "weapon": "fasztudja",
+        "range": "Melee",
+        "release": "2016",
         "species": "Human"
     },
+
+    "roadhog": {
+        "role": "Tank",
+        "gender": "Man",
+        "weapon": "Gun",
+        "range": "Ranged",
+        "release": "2016",
+        "species": "Human"
+    },
+
+    "sigma": {
+        "role": "Tank",
+        "gender": "Man",
+        "weapon": "Magic",
+        "range": "Ranged",
+        "release": "2019",
+        "species": "Human"
+    },
+
+    "winston": {
+        "role": "Tank",
+        "gender": "Man",
+        "weapon": "Gun",
+        "range": "Ranged",
+        "release": "2016",
+        "species": "Animal"
+    },
+
+    "wrecking ball": {
+        "role": "Tank",
+        "gender": "Man",
+        "weapon": "Gun",
+        "range": "Ranged",
+        "release": "2018",
+        "species": "Animal"
+    },
+
+    "zarya": {
+        "role": "Tank",
+        "gender": "Woman",
+        "weapon": "Magic",
+        "range": "Ranged",
+        "release": "2016",
+        "species": "Human"
+    },
+
 }
